@@ -57,6 +57,12 @@ from userdb_mongeonp2..shark_ut a
 join wos_2013..citation b on b.cited_ut = a.ut
 
 
+select a.ut, b.doi, d.*
+from userdb_mongeonp2..shark_ut a
+join wos_2013..pub_detail b on b.ut = a.ut
+left join altmetric_2019oct..pub_citation c on c.doi = b.doi
+left join altmetric_2019oct..pub_counts d on d.record_id = c.record_id
+
 
 
 
