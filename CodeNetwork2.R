@@ -18,7 +18,7 @@ library(tidyverse)
 library(igraph)
 
 ## =================
-# load users info
+# load nodes and edges info
 ## =================
 setwd("~/Documents/1 - Projets en cours/Requins")
 data <- read_excel("shark_data.xlsx", sheet = "citations",col_names = TRUE)
@@ -33,10 +33,16 @@ data <- inner_join(data, papersid, by = "citing_ut")
 colnames(papersid)[colnames(papersid) == "citing_ut"] <- "cited_ut"
 data <- inner_join(data, papersid, by = "cited_ut")
 
+## =================
+# create igraph object (network object with edges and vertices attributes)
+## =================
 network <- igraph::graph_from_data_frame(data, directed = TRUE, vertices = papers)
 
 network <- delete.vertices(network, igraph::V(network)[degree(network)==0])
 
+## =================
+# create network visualisation
+## =================
 graph <- plot(simplify(network, remove.loops = TRUE), edge.arrow.size=.05, 
      vertex.color=igraph::V(network)$topic,
      vertex.label=NA,
