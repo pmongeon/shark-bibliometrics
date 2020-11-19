@@ -2,7 +2,7 @@
 # Rémi Toupin
 # Projet : Shark papers topics - network
 # created: 17 Nov 2020
-# updated: 18 Non 2020
+# updated: 18 Nov 2020
 # Encoding : UTF-8
 # main objects =  networkpapers (graph of all papers)
 #                 mainnetwork (graph of the main component)
@@ -25,7 +25,7 @@ library(igraph)
 library(pracma)
 
 ## =================
-# load network info (bibliographic coupling - nodes, edges, weight, type)
+# load network info (co-citations - nodes, edges, weight, type)
 ## =================
 setwd("~/Documents/1 - Projets en cours/Requins")
 data <- read.csv("CC_network_articles.csv", header = TRUE)
