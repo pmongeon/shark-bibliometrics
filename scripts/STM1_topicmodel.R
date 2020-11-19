@@ -2,6 +2,7 @@
 # Rémi Toupin
 # Projet : Shark papers topics - network
 # created: 17 Nov 2020
+# updated: 18 Nov 2020
 # Encoding : UTF-8
 
 library(dplyr)
@@ -247,7 +248,7 @@ abstract_dfm <- abstract_count %>%
 # FindTopicsNumber_plot(ntopics)
 
 #create stm models (K = number of topics)
-abstractstm <- stm(abstract_dfm, K = 17, verbose = TRUE, init.type = "Spectral")
+abstractstm <- stm(abstract_dfm, K = 19, verbose = TRUE, init.type = "Spectral")
 abstopics <- tidy(abstractstm, matrix = "beta")
 absdocuments <- tidy(abstractstm, document_names = papers$ut, matrix = "gamma")
 abstopics
@@ -274,15 +275,28 @@ abstopterms %>%
   coord_flip() +
   scale_x_reordered()
 
-#append gamma metrics to papers tibble
-absdocuments$ut <- as.character(as.numeric(absdocuments$id_art))
-
-absdoc <- absdocuments %>%
+#create dataframe of gamma per topic per paper and most significant topic per paper
+topicmain <- absdocuments %>%
   group_by(ut) %>%
   filter(gamma == max(gamma))
-
-papers <- left_join(x = papers, y = absdoc, by = "ut")
-
-topiccount <- papers %>%
-  count(topic)
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 1) %>% select(ut, gamma1 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 2) %>% select(ut, gamma2 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 3) %>% select(ut, gamma3 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 4) %>% select(ut, gamma4 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 5) %>% select(ut, gamma5 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 6) %>% select(ut, gamma6 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 7) %>% select(ut, gamma7 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 8) %>% select(ut, gamma8 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 9) %>% select(ut, gamma9 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 10) %>% select(ut, gamma10 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 11) %>% select(ut, gamma11 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 12) %>% select(ut, gamma12 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 13) %>% select(ut, gamma13 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 14) %>% select(ut, gamma14 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 15) %>% select(ut, gamma15 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 16) %>% select(ut, gamma16 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 17) %>% select(ut, gamma17 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 18) %>% select(ut, gamma18 = gamma))
+topicmain <- left_join(by = "ut", topicmain, absdocuments %>% filter(topic == 19) %>% select(ut, gamma19 = gamma))
+topicmain <- topicmain %>% rename(name = ut)
 
