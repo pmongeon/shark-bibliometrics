@@ -14,8 +14,8 @@ library(readxl)
 setwd("C:/Users/Philippe/Documents/GitHub/shark-project")
 
 # Load data ----
-Articles <- read_excel("shark_data.xlsx", sheet ="papers")
-Citations <- read_excel("shark_data.xlsx", sheet ="citations")
+Articles <- read_excel("data/shark_data.xlsx", sheet ="papers")
+Citations <- read_excel("data/shark_data.xlsx", sheet ="citations")
 
 
 
@@ -78,6 +78,13 @@ DCNetwork <- sqldf("
       JOIN Articles c on c.ut = b.cited_ut
       ")
 
+# Combined BC+CC network
+
+CCBCNetwork <- rbind(CCNetwork,BCNetwork)
+CCBCNetwork <- CCBCNetwork %>% 
+  group_by(Source, Target, Type) %>% 
+  summarize(Weight = sum(Weight))
+
 # Export network files ----
 # Because Gephi works best with CSV files, I export the data frame in CSV
 # by default write.csv will include the row name (by default the row numbers), so I include row.names = FALSE because I don't want those).
@@ -90,9 +97,5 @@ write.csv(CCNetwork,"networks/CC_network_articles.csv", row.names = FALSE)
 # Clustering ----
 
 # Visualizing ----
-
-
-
-
 
 
