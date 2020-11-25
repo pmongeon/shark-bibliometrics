@@ -1,0 +1,24 @@
+{
+    "id": "352E9AC8",
+    "path": "~/GitHub/shark-project/scripts/Networks.R",
+    "project_path": "scripts/Networks.R",
+    "type": "r_source",
+    "hash": "0",
+    "contents": "",
+    "dirty": true,
+    "created": 1606315584999.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "cursorPosition": "93,21",
+        "scrollLine": "59"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1605837647,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1606315811447,
+    "read_only": false,
+    "read_only_alternatives": []
+}
