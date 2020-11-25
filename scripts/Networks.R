@@ -10,8 +10,6 @@ library(sqldf)
 library(tidyverse)
 library(readxl)
 
-# Working directory
-setwd("C:/Users/Philippe/Documents/GitHub/shark-project")
 
 # Load data ----
 Articles <- read_excel("data/shark_data.xlsx", sheet ="papers")
@@ -89,9 +87,10 @@ CCBCNetwork <- CCBCNetwork %>%
 # Because Gephi works best with CSV files, I export the data frame in CSV
 # by default write.csv will include the row name (by default the row numbers), so I include row.names = FALSE because I don't want those).
 
-write.csv(BCNetwork,"networks/BC_network_article.csv", row.names = FALSE) 
-write.csv(DCNetwork,"networks/DC_network_article.csv", row.names = FALSE) 
+write.csv(BCNetwork,"networks/BC_network_articles.csv", row.names = FALSE) 
+write.csv(DCNetwork,"networks/DC_network_articles.csv", row.names = FALSE) 
 write.csv(CCNetwork,"networks/CC_network_articles.csv", row.names = FALSE) 
+write.csv(CCBCNetwork,"networks/CCBC_network_articles.csv", row.names = FALSE)
 # write.csv(CONetwork,"networks/CO_network_keywords.csv", row.names = FALSE) # CO_Network not currently operational
 
 # Clustering ----
