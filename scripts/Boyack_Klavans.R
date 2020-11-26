@@ -17,52 +17,19 @@ library(tidytext)
 library(textstem)
 
 # Load data ----
-data <- import("data/sigmet.txt", quote="") %>%  # Loader les données
-  select(PersonID, name = "Full name", id_art, Title, Abstract, Affiliation, Year) %>%  # Garder seulement les colonnes necessaires
-  filter(Abstract != "") %>% 
-  unique()
-
-citations <- import("data/sigmet_citations.txt") %>%
-  filter(ID_Art_Citant != "NULL") %>% 
-  mutate(ID_Art_Citant = as.integer(ID_Art_Citant)) %>% 
-  mutate(ID_Art_Cite = as.integer(ID_Art_Cite))
+Articles <- read_excel("data/shark_data.xlsx", sheet ="papers")
+Citations <- read_excel("data/shark_data.xlsx", sheet ="citations")
   
 
-# Faire une liste avec  deux colonnes : 
-## 1) id_art 
-## 2) article cité OU mot du tire
-
-citations <- data %>% 
-  inner_join(citations, by = c("id_art" = "ID_Art_Citant")) %>% 
-  select(id_art, ID_Art_Cite)
-
-
 # parser les titres + abstracts pour faire la table id_art | mot
-text <- data %>% 
-  unite(text, c("Title", "Abstract")) %>% # Concatene le titre et l'abstract dans la colonne text
-  select(id_art, text) %>%  # selectionne seulement les colonnes id_art et text
+text <- Articles %>% 
+  unite(text, c("title", "abstract")) %>% # Concatene le titre et l'abstract dans la colonne text
+  select(ut, text) %>%  # selectionne seulement les colonnes id_art et text
   unique()
-
-
-# nettoyer le texte
-#
-#clean <- function(x) {
-#  # make text lower case
-#  x <- str_to_lower(x)
-#  # remove non-alphanumeric symbols
-#  x <- str_replace_all(x, "[^[:alnum:]]", " ")
-#  # collapse multiple spaces
-#  str_replace_all(x, "\\s+", " ")
-#  # remove leading and trailing whitespace
-#  trimws(x)
-#}
-
-#text_clean <- text %>% 
-# mutate(text = clean(text))
 
 text <- text %>% 
   unnest_tokens(word, text, token = "ngrams", n = 1) %>% 
-  select(id_art, word) %>% 
+  select(ut, word) %>% 
   drop_na(word) %>% 
   mutate(stemmed = stem_words(word))
 

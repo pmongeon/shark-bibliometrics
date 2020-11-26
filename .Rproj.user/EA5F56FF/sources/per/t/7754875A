@@ -3,22 +3,22 @@
     "path": "~/GitHub/shark-project/scripts/Boyack_Klavans.R",
     "project_path": "scripts/Boyack_Klavans.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "2529983497",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1606316401366.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
-        "cursorPosition": "37,2",
-        "scrollLine": "18"
+        "cursorPosition": "22,0",
+        "scrollLine": "17"
     },
     "folds": "",
-    "lastKnownWriteTime": 1603474354,
+    "lastKnownWriteTime": 1606362882,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1606318150929,
+    "last_content_update": 1606362882839,
     "read_only": false,
     "read_only_alternatives": []
 }
