@@ -5,22 +5,30 @@
 # Date: 2020-07-31
 #***********************
 
+
+#install.packages(c("ggplot2", "e1071", "caret", "quanteda", 
+ #                  "irlba", "randomForest"))
+
 # Load needed packages ----
 library(sqldf) # for running SQL in R
 library(rio) # for the import function
 library(stringr)
-library(tidyverse)
+
 library(data.table) # For the parsing
 library(tm) # For the stemming
-library(readxl)
-library(tidytext)
+
 library(textstem)
+library(tidyverse)
+library(tidytext)
+library(readxl)
+library(lsa) # For the cosine function
+library(irlba)
+
 
 # Load data ----
 Articles <- read_excel("data/shark_data.xlsx", sheet ="papers")
 Citations <- read_excel("data/shark_data.xlsx", sheet ="citations")
   
-
 # parser les titres + abstracts pour faire la table id_art | mot
 text <- Articles %>% 
   unite(text, c("title", "abstract")) %>% # Concatene le titre et l'abstract dans la colonne text
@@ -35,57 +43,24 @@ text <- text %>%
 
 # Remove stop words
 
-sw <- read.delim("data/NLTK_stopwords.txt", header = FALSE) %>% 
-  rename(word = V1) %>%
-  mutate(word = stem_words(word))
-
-text <- text %>%
-  anti_join(sw, by = ("word"))
-
+text <- anti_join(text, 
+                  mutate(get_stopwords(),stemmed = stem_words(word)), 
+                  by = ("stemmed"))
 
 # TF IDF ----
 
 text <- text %>% 
-  group_by(id_art, word) %>% 
+  group_by(ut, word) %>% 
   summarise(freq = n()) %>% 
   ungroup()
 
-# TF 
-## (TF(t) = (Number of times term t appears in a document) / (Total number of terms in the document).
+text <- bind_tf_idf(text,word,ut,freq)
 
-text <- text %>%
-  group_by(id_art) %>% 
-  mutate(total_words = sum(freq)) %>% 
-  ungroup() %>% 
-  mutate(tf = freq/total_words) %>% 
-  select(id_art, total_words, word, freq, tf)
 
-# IDF
-## IDF(t) = log_e(Total number of documents / Number of documents with term t in it)
+# 
 
-### count number of documents
-n_doc <- length(unique(textid_art))
-
-### count number of documents for each word
-idf <- text %>%
-  group_by(word) %>% 
-  summarise(total_words = n()) %>% 
-  ungroup() %>% 
-  mutate(total = n_doc) %>% 
-  mutate(idf = log(total/total_words)) %>% 
-  select(word, idf)
-
-# TF-IDF
-
-text <- text %>% 
-  inner_join(idf, by = "word") %>% 
-  mutate(tf_idf = tf*idf) %>% 
-  select(id_art, word, freq, tf_idf) %>% 
-  group_by(id_art) %>% 
-  mutate(sum_tf_idf = sum("^"(tf_idf,2))) %>% 
-  ungroup()
-
-table <- rbind(rename(mutate(citations, tf_idf=1), "word" = "ID_Art_Cite"), select(text, id_art, word, tf_idf))
+ls("package:lsa")
+help(textmatrix)
 
 
 # bibliographic coupling ----
