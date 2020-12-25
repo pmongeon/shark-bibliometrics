@@ -55,6 +55,9 @@ library(visNetwork)
 Articles <- read_delim(unzip("data/articles.zip"), delim="\t")
 Citations <- read_delim(unzip("data/citations.zip"), delim="\t")
 
+#removed unzipped files
+file.remove("articles.txt")
+file.remove("citations.txt")
 ```
 
 ### bibliographic coupling network
