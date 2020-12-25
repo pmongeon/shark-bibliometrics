@@ -1,60 +1,276 @@
 ---
-title: "Mapping the Shark research"
-author: "Philippe Mongeon"
+title: "Mapping Shark Research"
+author: "Rémi Toupin and Philippe Mongeon"
 date: "2020-12-07"
-abstract: ""
+abstract: "This is an abstract"
 output: 
   html_document:
-    toc: true # adds table on content
-    toc_float: true # makes table of content float on the left of the page rather than being at the top of the page
-    toc_depth: 3  # up to N depths of headings in the TOC (specified by #, ## and ###)
-    number_sections: true # will automatically number your headings
-    theme: cosmo  # many options for theme, this one is my favorite.
-    highlight: tango  # specifies the syntax highlighting style
+    toc: true 
+    toc_float:       
+      collapsed: false
+    toc_depth: 2
+    number_sections: false 
+    theme: lumen
+    highlight: tango
 #    css: my.css   # you can add your custom css, should be in same folder
+# Themes: "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"
+# Highlights: "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "breezedark", "textmate"
+
 ---
 
-# Data collection
+# Summary
 
-```{css, echo=FALSE}
+# Collecting the publications
 
-# Just to format the page... code won't be displayed because of echo = FALSE
+We collect all publications containing the term “shark” and published between 1980 and 2020 from the Web of 
+Science (WoS) database hosted by the Centre for Science and Technology Studies (CWTS) using the following SQL code:
 
-h1 {
-  padding-top: 30px;
+```{sql eval=FALSE}
+SELECT DISTINCT ut INTO #data from wos_2013_text..text_data where CONTAINS(title, 'shark')
+union select ut from wos_2013_text..text_data where CONTAINS(title, 'sharks') 
+union select ut from wos_2013_text..text_data where CONTAINS(keyword, 'shark')
+union select ut from wos_2013_text..text_data where CONTAINS(keyword, 'sharks')
+union select ut from wos_2013_text..text_data where CONTAINS(keyword_plus, 'shark')
+UNION select ut from wos_2013_text..text_data where CONTAINS(keyword_plus, 'sharks')
+UNION select ut from wos_2013_text..text_data where CONTAINS(abstract, 'shark')
+UNION SELECT ut from wos_2013_text..text_data WHERE CONTAINS(abstract, 'sharks')
+```
+
+# Building the network 
+
+```{r eval=FALSE}
+# Load needed packages
+library(tidyverse)
+library(igraph)
+
+# Load data
+
+Articles <- read_delim(unzip("data/articles.zip"), delim="\t")
+Citations <- read_delim(unzip("data/citations.zip"), delim="\t")
+
+# bibliographic coupling network
+BCNetwork <- select(Articles, ut) %>% 
+  inner_join(Citations, by=c("ut" = "citing_ut")) %>% 
+  inner_join(Citations, by="cited_ut") %>% 
+  inner_join(select(Articles,ut), by=c("citing_ut" = "ut")) %>% 
+  select(source = ut, target = citing_ut) %>%
+  filter(target > source) %>% 
+  count(source, target, name = "weight") %>% 
+  mutate(type = "undirected")
+  
+# co-citation network
+CCNetwork <- select(Articles, ut) %>% 
+  inner_join(Citations, by=c("ut" = "cited_ut")) %>% 
+  inner_join(Citations, by="citing_ut") %>% 
+  inner_join(select(Articles,ut), by=c("cited_ut" = "ut")) %>% 
+  select(source = ut, target = cited_ut) %>%
+  filter(target > source) %>% 
+  count(source, target, name = "weight") %>% 
+  mutate(type = "undirected")
+
+# Combined BC+CC network
+CCBCNetwork <- rbind(CCNetwork,BCNetwork) %>%
+  group_by(source, target, type) %>% 
+  summarize(weight = sum(weight)) %>% 
+  ungroup()
+
+# Remove objects that are no longer needed
+remove(CCNetwork, BCNetwork)
+```
+
+# Identifying the communities
+
+### macro-clusters
+
+```{r eval=FALSE}
+# create igraph object
+network <- graph_from_data_frame(CCBCNetwork, directed = F) %>% simplify(remove.loops = TRUE)
+
+#keep only the main component
+V(network)$comp <- components(network)$membership
+network <- induced_subgraph(network, V(network)$comp==1)
+
+# Identify communities
+V(network)$community <- cluster_louvain(network, weights = c(E(network)$Weight))$membership
+
+# Add macro cluster to the articles table
+Articles <- Articles %>% 
+  left_join(select(as_data_frame(network, "both")$vertices, name, macro_cluster = community), by=c("ut" = "name"))
+            
+```
+
+### meso-clusters
+
+```{r eval=FALSE}
+
+j = 0
+for (i in 1:max(filter(Articles, !is.na(macro_cluster))$macro_cluster)) {
+
+# create igraph object
+
+network <- CCBCNetwork %>% 
+  inner_join(select(filter(Articles, macro_cluster == i),ut), by=c("source" = "ut")) %>% 
+  inner_join(select(filter(Articles, macro_cluster == i),ut), by=c("target" = "ut")) %>% 
+  graph_from_data_frame(directed = F) %>% 
+  simplify(remove.loops = TRUE)
+
+#keep only the main component
+V(network)$comp <- components(network)$membership
+network <- induced_subgraph(network, V(network)$comp==1)
+
+# Identify communities
+V(network)$community <- cluster_louvain(network, weights = c(E(network)$Weight))$membership
+
+# List of articles with their community
+if (i==1){
+x <-  select(as_data_frame(network, "both")$vertices, name, meso_cluster = community) %>% 
+  mutate(meso_cluster = meso_cluster+j)
+meso_cluster <- select(Articles,ut) %>% 
+  inner_join(x, by=c("ut" = "name"))
 }
-h2 {
-  padding-top: 20px;
+if (i>1){
+x <-  select(as_data_frame(network, "both")$vertices, name, meso_cluster = community) %>% 
+  mutate(meso_cluster = meso_cluster+j)
+meso_cluster <- rbind(meso_cluster, select(Articles,ut) %>% 
+  inner_join(x, by=c("ut" = "name")))
 }
-h3{
-  padding-top:10px;
+j = max(meso_cluster$meso_cluster)
 }
+
+# Add meso clusters to Articles
+
+Articles <- Articles %>% 
+  left_join(meso_cluster, by="ut")
+
 ```
 
-# Mapping the Shark-related scholarship
+### micro-clusters
 
-```{r setup, include=FALSE}
-# This code won't be ran because of include = FALSE
+```{r eval=FALSE}
+
+j=0
+for (i in 1:max(filter(Articles, !is.na(meso_cluster))$meso_cluster)) {
+# create igraph object
+
+network <- CCBCNetwork %>% 
+  inner_join(select(filter(Articles, meso_cluster == i),ut), by=c("source" = "ut")) %>% 
+  inner_join(select(filter(Articles, meso_cluster == i),ut), by=c("target" = "ut")) %>% 
+  graph_from_data_frame(directed = F) %>% 
+  simplify(remove.loops = TRUE)
+
+#keep only the main component
+V(network)$comp <- components(network)$membership
+network <- induced_subgraph(network, V(network)$comp==1)
+
+# Identify communities
+V(network)$community <- cluster_louvain(network, weights = c(E(network)$Weight))$membership
+
+# List of articles with their community
+if (i==1){
+x <-  select(as_data_frame(network, "both")$vertices, name, micro_cluster = community) %>% 
+  mutate(micro_cluster = micro_cluster+j)
+
+micro_cluster <- select(Articles,ut) %>% 
+  inner_join(x, by=c("ut" = "name"))
+}
+if (i>1){
+x <-  select(as_data_frame(network, "both")$vertices, name, micro_cluster = community) %>% 
+  mutate(micro_cluster = micro_cluster+j)
+micro_cluster <- rbind(micro_cluster, select(Articles,ut) %>% 
+  inner_join(x, by=c("ut" = "name")))
+}
+j = max(micro_cluster$micro_cluster)
+}
+
+Articles <- Articles %>% 
+  left_join(micro_cluster, by="ut")
+
+# export articles
+
+write_delim(Articles, "data/articles_clusters.txt", delim="\t")
 ```
 
-# Community detection
+# Characterizing the communities
 
+```{r eval = FALSE}
 
-```{r html table, echo=FALSE, warning=FALSE}
-# code will run but will not be displayed
-# warnings won't be shown in the output
+##=================
+#create summary table of topics by community
+#gamma is the fitting coefficient of a document to a topic
+#IMPORTANT : check for weighted measures of topic to community
+##=================
+summarynodes <- df$vertices %>%
+  group_by(community) %>%
+  summarise(npapers = n_distinct(name),
+            ntopic = n_distinct(topic, na.rm = T),
+            most_topic = pracma::Mode(topic),
+            most_topic_median = median(gamma, na.rm = TRUE),
+            gamma1 = median(gamma1[gamma1>=0.1], na.rm= T),
+            gamma2 = median(gamma2[gamma2>=0.1], na.rm= T),
+            gamma3 = median(gamma3[gamma3>=0.1], na.rm= T),
+            gamma4 = median(gamma4[gamma4>=0.1], na.rm= T),
+            gamma5 = median(gamma5[gamma5>=0.1], na.rm= T),
+            gamma6 = median(gamma6[gamma6>=0.1], na.rm= T),
+            gamma7 = median(gamma7[gamma7>=0.1], na.rm= T),
+            gamma8 = median(gamma8[gamma8>=0.1], na.rm= T),
+            gamma9 = median(gamma9[gamma9>=0.1], na.rm= T),
+            gamma10 = median(gamma10[gamma10>=0.1], na.rm= T),
+            gamma11 = median(gamma11[gamma11>=0.1], na.rm= T),
+            gamma12 = median(gamma12[gamma12>=0.1], na.rm= T),
+            gamma13 = median(gamma13[gamma13>=0.1], na.rm= T),
+            gamma14 = median(gamma14[gamma14>=0.1], na.rm= T),
+            gamma15 = median(gamma15[gamma15>=0.1], na.rm= T),
+            gamma16 = median(gamma16[gamma16>=0.1], na.rm= T),
+            gamma17 = median(gamma17[gamma17>=0.1], na.rm= T),
+            gamma18 = median(gamma18[gamma18>=0.1], na.rm= T),
+            gamma19 = median(gamma19[gamma19>=0.1], na.rm= T),
+            )
+
+write_csv(df$edges, "BC_Louvain_edges.csv")
+write_csv(df$vertices, "BC_Louvain_vertices.csv")
+write_csv(summarynodes, "BC_Louvain_vertices_summary.csv")
+
+df$vertices %>%
+  count(topic)
+
 ```
 
-# Topic modelling
+# Visualizing the communities
 
-```{sql eval=FALSE, echo=TRUE}
-# this code will not run but will be displayed"
+```{r eval=FALSE}
+head(CCBCNetwork)
+
+macro_network <- CCBCNetwork %>% 
+  inner_join(select(Articles, ut, macro_cluster), by=c("source" = "ut"))%>%
+  inner_join(select(Articles, ut, macro_cluster), by=c("target" = "ut")) %>% 
+  select(source = macro_cluster.x, target = macro_cluster.y, weight, type) %>%
+  filter(target > source) %>% 
+  group_by(source, target, type) %>% 
+  summarize(weight = sum(weight))
+
+meso_network <- CCBCNetwork %>% 
+  inner_join(select(Articles, ut, meso_cluster), by=c("source" = "ut"))%>%
+  inner_join(select(Articles, ut, meso_cluster), by=c("target" = "ut")) %>% 
+  select(source = meso_cluster.x, target = meso_cluster.y, weight, type) %>%
+  filter(target > source) %>% 
+  group_by(source, target, type) %>% 
+  summarize(weight = sum(weight))
+
+micro_network <- CCBCNetwork %>% 
+  inner_join(select(Articles, ut, micro_cluster), by=c("source" = "ut"))%>%
+  inner_join(select(Articles, ut, micro_cluster), by=c("target" = "ut")) %>% 
+  select(source = micro_cluster.x, target = micro_cluster.y, weight, type) %>%
+  filter(target > source) %>% 
+  group_by(source, target, type) %>% 
+  summarize(weight = sum(weight))
+
+
+library("visNetwork")
+graph <- graph_from_data_frame(meso_network, directed = FALSE)
+
+visIgraph(graph)
+
 ```
-
-# Bibliometric indicators
-
-# Altmetric indicators
-
 
 
 
