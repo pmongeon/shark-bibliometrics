@@ -12,43 +12,55 @@ output:
     number_sections: false 
     theme: lumen
     highlight: tango
-#    css: my.css   # you can add your custom css, should be in same folder
-# Themes: "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"
-# Highlights: "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "breezedark", "textmate"
-
 ---
 
 # Summary
 
 # Collecting the publications
 
-We collect all publications containing the term “shark” and published between 1980 and 2020 from the Web of 
-Science (WoS) database hosted by the Centre for Science and Technology Studies (CWTS) using the following SQL code:
+We collect the title, abstract, and keywords of all publications containing the term “shark” and published between 1980 and 2020 from the Web of Science (WoS) database hosted by the Centre for Science and Technology Studies (CWTS) using the query below. The resulting dataset can be found on the github repository of the proecet under _data/articles.zip_. 
 
 ```{sql eval=FALSE}
-SELECT DISTINCT ut INTO #data from wos_2013_text..text_data where CONTAINS(title, 'shark')
-union select ut from wos_2013_text..text_data where CONTAINS(title, 'sharks') 
-union select ut from wos_2013_text..text_data where CONTAINS(keyword, 'shark')
-union select ut from wos_2013_text..text_data where CONTAINS(keyword, 'sharks')
-union select ut from wos_2013_text..text_data where CONTAINS(keyword_plus, 'shark')
-UNION select ut from wos_2013_text..text_data where CONTAINS(keyword_plus, 'sharks')
-UNION select ut from wos_2013_text..text_data where CONTAINS(abstract, 'shark')
-UNION SELECT ut from wos_2013_text..text_data WHERE CONTAINS(abstract, 'sharks')
+SELECT DISTINCT ut, title, abstract, author_keyword INTO #data from wos_2013_text..text_data where CONTAINS(title, 'shark')
+union select ut, title, abstract, author_keyword from wos_2013_text..text_data where CONTAINS(title, 'sharks') 
+union select ut, title, abstract, author_keyword from wos_2013_text..text_data where CONTAINS(keyword, 'shark')
+union select ut, title, abstract, author_keyword from wos_2013_text..text_data where CONTAINS(keyword, 'sharks')
+union select ut, title, abstract, author_keyword from wos_2013_text..text_data where CONTAINS(keyword_plus, 'shark')
+UNION selectut, title, abstract, author_keyword from wos_2013_text..text_data where CONTAINS(keyword_plus, 'sharks')
+UNION select ut, title, abstract, author_keyword from wos_2013_text..text_data where CONTAINS(abstract, 'shark')
+UNION SELECT ut, title, abstract, author_keyword from wos_2013_text..text_data WHERE CONTAINS(abstract, 'sharks')
 ```
 
-# Building the network 
+Then we retrieve the citations links between those publications with the following query. The resulting dataset can be found on the github repository of the proecet under _data/citations.zip_
 
-```{r eval=FALSE}
-# Load needed packages
+```{sql eval=FALSE}
+select b.citing_ut, b.cited_ut
+from #data a -- this is table generated with our first query
+join wos_2013..citation b on b.citing_ut = a.ut
+union select b.citing_ut, b.cited_ut
+from #data a
+join wos_2013..citation b on b.cited_ut = a.ut
+```
+
+
+# Building the network
+
+We then move to R and load the required packages and the publication and citation data.
+
+```{r load-packages, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(igraph)
-
-# Load data
+library(visNetwork)
 
 Articles <- read_delim(unzip("data/articles.zip"), delim="\t")
 Citations <- read_delim(unzip("data/citations.zip"), delim="\t")
 
-# bibliographic coupling network
+```
+
+### bibliographic coupling network
+
+```{r bc network, message=FALSE, warning=FALSE}
+
 BCNetwork <- select(Articles, ut) %>% 
   inner_join(Citations, by=c("ut" = "citing_ut")) %>% 
   inner_join(Citations, by="cited_ut") %>% 
@@ -57,8 +69,11 @@ BCNetwork <- select(Articles, ut) %>%
   filter(target > source) %>% 
   count(source, target, name = "weight") %>% 
   mutate(type = "undirected")
-  
-# co-citation network
+```
+
+### co-citation network
+
+```{r cc network, message=FALSE, warning=FALSE}
 CCNetwork <- select(Articles, ut) %>% 
   inner_join(Citations, by=c("ut" = "cited_ut")) %>% 
   inner_join(Citations, by="citing_ut") %>% 
@@ -67,22 +82,23 @@ CCNetwork <- select(Articles, ut) %>%
   filter(target > source) %>% 
   count(source, target, name = "weight") %>% 
   mutate(type = "undirected")
+```
 
+### combined network
+
+```{r combined network, message=FALSE, warning=FALSE}
 # Combined BC+CC network
 CCBCNetwork <- rbind(CCNetwork,BCNetwork) %>%
   group_by(source, target, type) %>% 
   summarize(weight = sum(weight)) %>% 
   ungroup()
-
-# Remove objects that are no longer needed
-remove(CCNetwork, BCNetwork)
 ```
 
 # Identifying the communities
 
 ### macro-clusters
 
-```{r eval=FALSE}
+```{r macro_cluster, message=FALSE, warning=FALSE}
 # create igraph object
 network <- graph_from_data_frame(CCBCNetwork, directed = F) %>% simplify(remove.loops = TRUE)
 
@@ -101,13 +117,12 @@ Articles <- Articles %>%
 
 ### meso-clusters
 
-```{r eval=FALSE}
+```{r meso_cluster, message=FALSE, warning=FALSE}
 
 j = 0
 for (i in 1:max(filter(Articles, !is.na(macro_cluster))$macro_cluster)) {
 
 # create igraph object
-
 network <- CCBCNetwork %>% 
   inner_join(select(filter(Articles, macro_cluster == i),ut), by=c("source" = "ut")) %>% 
   inner_join(select(filter(Articles, macro_cluster == i),ut), by=c("target" = "ut")) %>% 
@@ -146,12 +161,12 @@ Articles <- Articles %>%
 
 ### micro-clusters
 
-```{r eval=FALSE}
+```{r micro_cluster, message=FALSE, warning=FALSE}
 
 j=0
 for (i in 1:max(filter(Articles, !is.na(meso_cluster))$meso_cluster)) {
-# create igraph object
 
+# create igraph object
 network <- CCBCNetwork %>% 
   inner_join(select(filter(Articles, meso_cluster == i),ut), by=c("source" = "ut")) %>% 
   inner_join(select(filter(Articles, meso_cluster == i),ut), by=c("target" = "ut")) %>% 
@@ -185,6 +200,9 @@ j = max(micro_cluster$micro_cluster)
 Articles <- Articles %>% 
   left_join(micro_cluster, by="ut")
 
+#remove unused objects
+remove(x, network, Citations, meso_cluster, micro_cluster,j,i)
+
 # export articles
 
 write_delim(Articles, "data/articles_clusters.txt", delim="\t")
@@ -192,7 +210,7 @@ write_delim(Articles, "data/articles_clusters.txt", delim="\t")
 
 # Characterizing the communities
 
-```{r eval = FALSE}
+```{r eval = FALSE, message=FALSE}
 
 ##=================
 #create summary table of topics by community
@@ -237,39 +255,41 @@ df$vertices %>%
 
 # Visualizing the communities
 
-```{r eval=FALSE}
-head(CCBCNetwork)
+```{r viz_macro, message=FALSE, warning=FALSE}
 
-macro_network <- CCBCNetwork %>% 
+CCBCNetwork %>% 
   inner_join(select(Articles, ut, macro_cluster), by=c("source" = "ut"))%>%
   inner_join(select(Articles, ut, macro_cluster), by=c("target" = "ut")) %>% 
   select(source = macro_cluster.x, target = macro_cluster.y, weight, type) %>%
   filter(target > source) %>% 
   group_by(source, target, type) %>% 
-  summarize(weight = sum(weight))
+  summarize(weight = sum(weight)) %>% 
+  graph_from_data_frame(directed = FALSE) %>% 
+  visIgraph()
+```
 
-meso_network <- CCBCNetwork %>% 
+```{r viz_meso, message=FALSE, warning=FALSE}
+CCBCNetwork %>% 
   inner_join(select(Articles, ut, meso_cluster), by=c("source" = "ut"))%>%
   inner_join(select(Articles, ut, meso_cluster), by=c("target" = "ut")) %>% 
   select(source = meso_cluster.x, target = meso_cluster.y, weight, type) %>%
   filter(target > source) %>% 
   group_by(source, target, type) %>% 
-  summarize(weight = sum(weight))
+  summarize(weight = sum(weight)) %>% 
+  graph_from_data_frame(directed = FALSE) %>% 
+  visIgraph()
+```
 
-micro_network <- CCBCNetwork %>% 
+```{r viz_micro, message=FALSE, warning=FALSE}
+CCBCNetwork %>% 
   inner_join(select(Articles, ut, micro_cluster), by=c("source" = "ut"))%>%
   inner_join(select(Articles, ut, micro_cluster), by=c("target" = "ut")) %>% 
   select(source = micro_cluster.x, target = micro_cluster.y, weight, type) %>%
   filter(target > source) %>% 
   group_by(source, target, type) %>% 
-  summarize(weight = sum(weight))
-
-
-library("visNetwork")
-graph <- graph_from_data_frame(meso_network, directed = FALSE)
-
-visIgraph(graph)
-
+  summarize(weight = sum(weight)) %>% 
+  graph_from_data_frame(directed = FALSE) %>% 
+  visIgraph()
 ```
 
 
