@@ -51,14 +51,15 @@ We then move to R and load the required packages and the publication and citatio
 library(tidyverse)
 library(igraph)
 library(visNetwork)
-library(gt)
 
 Articles <- read_delim(unzip("data/articles.zip"), delim="\t")
 Citations <- read_delim(unzip("data/citations.zip"), delim="\t")
+Altmetrics <- read_delim(unzip("data/altmetrics.zip"), delim="\t")
 
 #removed unzipped files
 file.remove("articles.txt")
 file.remove("citations.txt")
+file.remove("altmetrics.txt")
 ```
 
 ### bibliographic coupling network
@@ -216,148 +217,44 @@ write_delim(Articles, "data/articles_clusters.txt", delim="\t")
 
 ```{r eval = FALSE, message=FALSE}
 
-### ABSTRACT ANALYSIS - WORDS PER COMMUNITY
-## =================
-# basic string cleaning
-## =================
-
-papers <- Articles
-
-#remove rights reserved
-papers$abstract <- gsub("\\(C\\).+", " ", papers$abstract)
-length(unique(papers$abstract))
-
-#upper cases to lower cases
-papers$abstract <- tolower(papers$abstract)
-
-#remove URLs
-papers$abstract <- gsub(" ?(f|ht)(tp)(s?)(://)(.*)[.|/](.*)", "", papers$abstract) 
-
-#remove emojis
-papers$abstract <- gsub("[^\x01-\x7F]", "", papers$abstract)
-
-#remove numbers
-papers$abstract <- gsub("[0-9]+", "", papers$abstract)
-
-#remove lists with / and replace with " " (e.g., wife/phd/friend)
-papers$abstract <- gsub("\\/", " ", papers$abstract)
-
-# forward slash -- escape with a double backslash
-sub("\\/", " ", "Peace/Love")
-#[1] "Peace Love"
-
-length(unique(papers$abstract))
-
-papers <- papers %>% 
-  filter(!grepl('null', abstract))
-
-papers <- papers %>% 
-  filter(!is.na(abstract))
-
-#remove punctuations
-punct <- '[]\\?!\"\'$%&(){}+*/:;,._`|~\\[<=>\\^-]'
-papers$abstract <- gsub(punct, "", papers$abstract)
-
-#convert plural to singular
-papers$abstract <- gsub("\\bsharks\\b", "shark", papers$abstract)
-
-#remove stop words
-data("stop_words")
-stop_words <- stop_words %>%
-  add_row(word = "shark", lexicon = "SMART") %>%
-  add_row(word = "species", lexicon = "SMART")
-
 ##=================
-#append vertices topics attributes 
-#==================
-#unnest tokens
-abstract_df <- papers %>% 
-  unnest_tokens(word, abstract)
-
-#remove NA tokens
-abstract_sep <- abstract_df[complete.cases(abstract_df[, 29]),]
-
-#remove stopwords
-abstract_fil <- abstract_sep %>%
-  filter(!word %in% stop_words$word)
-
-#count word per document - tf-idf
-abstract_count_mac <- abstract_fil %>%
-  group_by(macro_cluster) %>%
-  count(macro_cluster, npapers = n_distinct(name), word, sort = TRUE) %>%
-  bind_tf_idf(word, macro_cluster, n) %>%
-  arrange(-n) %>%
-  top_n(10) %>%
-  ungroup()
-
-abstract_count_mes <- abstract_fil %>%
-  group_by(meso_cluster) %>%
-  count(macro_cluster, meso_cluster, npapers = n_distinct(name), word, sort = TRUE) %>%
-  bind_tf_idf(word, meso_cluster, n) %>%
-  arrange(-n) %>%
-  top_n(10) %>%
-  ungroup()
-
-abstract_count_mic <- abstract_fil %>%
-  group_by(micro_cluster) %>%
-  count(macro_cluster, meso_cluster, micro_cluster, npapers = n_distinct(name), word, sort = TRUE) %>%
-  bind_tf_idf(word, micro_cluster, n) %>%
-  arrange(-n) %>%
-  top_n(10) %>%
-  ungroup()
-
+#create summary table of topics by community
+#gamma is the fitting coefficient of a document to a topic
+#IMPORTANT : check for weighted measures of topic to community
 ##=================
-#create summary table of top words by clusters
-##=================
-summaryword <- abstract_count_mic %>%
-  group_by(micro_cluster) %>%
-  summarise(macro_cluster,
-            meso_cluster,
-            npapers,
-            words = paste(word, collapse=", "),
-  ) %>%
-  slice(1)
+summarynodes <- df$vertices %>%
+  group_by(community) %>%
+  summarise(npapers = n_distinct(name),
+            ntopic = n_distinct(topic, na.rm = T),
+            most_topic = pracma::Mode(topic),
+            most_topic_median = median(gamma, na.rm = TRUE),
+            gamma1 = median(gamma1[gamma1>=0.1], na.rm= T),
+            gamma2 = median(gamma2[gamma2>=0.1], na.rm= T),
+            gamma3 = median(gamma3[gamma3>=0.1], na.rm= T),
+            gamma4 = median(gamma4[gamma4>=0.1], na.rm= T),
+            gamma5 = median(gamma5[gamma5>=0.1], na.rm= T),
+            gamma6 = median(gamma6[gamma6>=0.1], na.rm= T),
+            gamma7 = median(gamma7[gamma7>=0.1], na.rm= T),
+            gamma8 = median(gamma8[gamma8>=0.1], na.rm= T),
+            gamma9 = median(gamma9[gamma9>=0.1], na.rm= T),
+            gamma10 = median(gamma10[gamma10>=0.1], na.rm= T),
+            gamma11 = median(gamma11[gamma11>=0.1], na.rm= T),
+            gamma12 = median(gamma12[gamma12>=0.1], na.rm= T),
+            gamma13 = median(gamma13[gamma13>=0.1], na.rm= T),
+            gamma14 = median(gamma14[gamma14>=0.1], na.rm= T),
+            gamma15 = median(gamma15[gamma15>=0.1], na.rm= T),
+            gamma16 = median(gamma16[gamma16>=0.1], na.rm= T),
+            gamma17 = median(gamma17[gamma17>=0.1], na.rm= T),
+            gamma18 = median(gamma18[gamma18>=0.1], na.rm= T),
+            gamma19 = median(gamma19[gamma19>=0.1], na.rm= T),
+            )
 
-summarytable <- summaryword %>%
-  select(macro_cluster, meso_cluster, micro_cluster, npapers, words) %>%
-  ungroup()
+write_csv(df$edges, "BC_Louvain_edges.csv")
+write_csv(df$vertices, "BC_Louvain_vertices.csv")
+write_csv(summarynodes, "BC_Louvain_vertices_summary.csv")
 
-gt_table <- summarytable %>%
-  gt(rowname_col = "micro_cluster") %>%
-  tab_header(
-    title = "Communities of shark research (co-citations and bibliographic coupling)"
-  ) %>%
-  tab_stubhead(label = "Micro-community") %>%
-  cols_label(
-    macro_cluster = "Macro-community",
-    meso_cluster = "Meso-community",
-    npapers = "N papers in community",
-    words = "Top 10 words used in papers abstracts",
-  )
-
-gt_table <- gt_table %>% 
-  tab_style(style = list(
-    cell_text(font = "Times", size = px(14))
-  ),
-  locations = list(cells_body(), cells_stub(), cells_stubhead(), cells_column_labels(1:4))
-  ) %>%
-  tab_style(style = list(
-    cell_text(align = "center", font = "Times", size = px(16), weight = "bolder")
-  ),
-  locations = list(cells_column_labels(1:4), cells_stubhead(), cells_title())
-  ) %>%
-  tab_style(style = list(
-    cell_text(align = "left")
-  ),
-  locations = list(cells_body(1:4))
-  ) %>%
-  tab_style(style = list(
-    cell_text(align = "right")
-  ),
-  locations = list(cells_body(5))
-  )
-
-gt_table
+df$vertices %>%
+  count(topic)
 
 ```
 
@@ -400,5 +297,69 @@ CCBCNetwork %>%
   visIgraph()
 ```
 
+
+# Distribution of indicators
+
+```{r message=FALSE, warning=FALSE}
+
+indicators <- Articles %>%
+  left_join(Altmetrics, by="ut") %>% 
+  filter(!is.na(total))
+
+impact_dist_macro <- indicators %>% 
+  group_by(macro_cluster) %>% 
+  summarize(n_articles = n(),
+            n_tweets = sum(twitter),
+            n_news = sum(news),
+            n_policy = sum(policy),
+            n_all_indicators = sum(total),
+            avg_tweets = mean(twitter),
+            avg_news = mean(news),
+            avg_policy = mean(policy),
+            avg_all_indicators = mean(total)
+            ) %>% 
+  ungroup() %>% 
+  mutate(z_tweets = (avg_tweets-mean(avg_tweets))/sd(avg_tweets),
+         z_news = (avg_news-mean(avg_news))/sd(avg_news),
+         z_policy = (avg_policy-mean(avg_policy))/sd(avg_policy),
+         z_all_indicators = (avg_all_indicators-mean(avg_all_indicators))/sd(avg_all_indicators))
+  
+impact_dist_meso <- indicators %>% 
+  group_by(meso_cluster) %>% 
+  summarize(n_articles = n(),
+            n_tweets = sum(twitter),
+            n_news = sum(news),
+            n_policy = sum(policy),
+            n_all_indicators = sum(total),
+            avg_tweets = mean(twitter),
+            avg_news = mean(news),
+            avg_policy = mean(policy),
+            avg_all_indicators = mean(total)
+            ) %>% 
+  ungroup() %>% 
+  mutate(z_tweets = (avg_tweets-mean(avg_tweets))/sd(avg_tweets),
+         z_news = (avg_news-mean(avg_news))/sd(avg_news),
+         z_policy = (avg_policy-mean(avg_policy))/sd(avg_policy),
+         z_all_indicators = (avg_all_indicators-mean(avg_all_indicators))/sd(avg_all_indicators))
+
+impact_dist_micro <- indicators %>% 
+  group_by(micro_cluster) %>% 
+  summarize(n_articles = n(),
+            n_tweets = sum(twitter),
+            n_news = sum(news),
+            n_policy = sum(policy),
+            n_all_indicators = sum(total),
+            avg_tweets = mean(twitter),
+            avg_news = mean(news),
+            avg_policy = mean(policy),
+            avg_all_indicators = mean(total)
+            ) %>% 
+  ungroup() %>% 
+  mutate(z_tweets = (avg_tweets-mean(avg_tweets))/sd(avg_tweets),
+         z_news = (avg_news-mean(avg_news))/sd(avg_news),
+         z_policy = (avg_policy-mean(avg_policy))/sd(avg_policy),
+         z_all_indicators = (avg_all_indicators-mean(avg_all_indicators))/sd(avg_all_indicators))
+
+```
 
 
