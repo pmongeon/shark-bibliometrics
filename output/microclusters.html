@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<style>body{background-color:white;}</style>
+
+
+</head>
+<body data-new-gr-c-s-check-loaded="8.868.0" data-gr-ext-installed="">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#wgzsewctvv .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wgzsewctvv .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 4px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wgzsewctvv .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wgzsewctvv .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wgzsewctvv .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wgzsewctvv .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wgzsewctvv .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wgzsewctvv .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wgzsewctvv .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wgzsewctvv .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wgzsewctvv .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wgzsewctvv .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wgzsewctvv .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wgzsewctvv .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#wgzsewctvv .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wgzsewctvv .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wgzsewctvv .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#wgzsewctvv .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wgzsewctvv .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#wgzsewctvv .gt_left {
+  text-align: left;
+}
+
+#wgzsewctvv .gt_center {
+  text-align: center;
+}
+
+#wgzsewctvv .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wgzsewctvv .gt_font_normal {
+  font-weight: normal;
+}
+
+#wgzsewctvv .gt_font_bold {
+  font-weight: bold;
+}
+
+#wgzsewctvv .gt_font_italic {
+  font-style: italic;
+}
+
+#wgzsewctvv .gt_super {
+  font-size: 65%;
+}
+
+#wgzsewctvv .gt_footnote_marks {
+  font-style: italic;
+  font-size: 65%;
+}
+</style>
+<div id="wgzsewctvv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+  <thead class="gt_header">
+    <tr>
+      <th colspan="5" class="gt_heading gt_title gt_font_normal" style="font-family: Times; font-size: 16px; text-align: center; font-weight: bolder;">Communities of shark research (co-citations and bibliographic coupling)</th>
+    </tr>
+    <tr>
+      <th colspan="5" class="gt_heading gt_subtitle gt_font_normal gt_bottom_border" style=""></th>
+    </tr>
+  </thead>
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: Times; font-size: 16px; text-align: center; font-weight: bolder;">Micro-community</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: Times; font-size: 16px; text-align: center; font-weight: bolder;">Macro-community</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="font-family: Times; font-size: 16px; text-align: center; font-weight: bolder;">Meso-community</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="font-family: Times; font-size: 16px; text-align: center; font-weight: bolder;">N papers in community</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="font-family: Times; font-size: 16px; text-align: center; font-weight: bolder;">Top 10 words used in papers abstracts</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">1</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">1</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">1</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">metaphor, metaphors, literal, abstraction, metaphorical, sentence, lawyer, read, affirmative, baselineprime</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">2</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">1</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">patients, schizophrenia, metaphors, metaphor, aptness, figurative, literality, concretism, depressive, symptomatology</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">3</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">ferritin, ferritins, iron, szlf, subunits, crossreactivity, avbf, szlfe, alf, slf</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">die, flow, melt, exit, fracture, polymer, sharkskin, fluctuation, periodical, extrudate</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">5</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">flow, instabilities, regimes, transducers, die, blow, extruders, responsive, rheometers, setup</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">sharkskin, slip, wall, melt, polymer, elasticity, exit, extruded, instability, slit, elongational</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">aids, composites, mpe, mechanochemical, pvc, sawdust, methacrylate, mmacoba, mmacoea, rheometer</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">sharkskin, melt, fracture, crystallization, extrusion, instabilities, pe, copolymer, etfe, hexene</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">slip, extrusion, sharkskin, fracture, polyethylene, pe, tpe, tpes, vinyl, gn, pvb</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">53</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">fisheries, conservation, management, fishing, trade, de, nations, en, slmpas, atlantico</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">216</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">conservation, fisheries, fishing, management, populations, capture, mortality, mediterranean, catch, mpas</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">153</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">population, conservation, management, reef, populations, fisheries, fishing, genetic, sawfish, sawfishes</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">13</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">236</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">reef, fishing, abundance, fisheries, biomass, predators, coral, ecosystem, reefs, trophic</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">14</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">215</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">population, catch, management, conservation, fishing, populations, fisheries, bycatch, fishery, cpue</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">15</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">bones, vertebrae, archaeological, fais, makatea, mni, prehistoric, outerreef, prehistory, ulong</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">16</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">309</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">fishing, bycatch, catch, fisheries, fishery, longline, tuna, hooks, hook, circle</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">17</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">148</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">conservation, tourism, diving, attitudes, public, wildlife, provisioning, ecotourism, tourists, fear</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">18</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">136</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">conservation, fisheries, fishing, pelagic, management, catch, fishery, longline, bycatch, hooks</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">19</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">81</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">fisheries, management, fishing, catch, trade, fins, dried, bmaa, maw, alphaparvalbumins</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">20</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">19</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">assemblages, depths, baited, stereobruvs, mofs, surf, jellyfish, bruvs, srds, wellheads</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">21</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">33</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">reef, predators, movements, sawfish, residency, wideranging, amblyrhynchos, kzn, fsa, shapemodel</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">22</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">34</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">de, management, movement, las, campaigns, los, con, para, nliw, wio</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">23</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">17</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">marine, management, park, mpa, mpas, zoning, workshops, cbe, multiresolution, sampa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">24</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">words,
+ lexical, valence, word, bilinguals, emotion, positivity, affective, 
+simon, emotionladen, monolinguals, neurocognitive, unpredicted</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">26</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">patent, patents, firms, business, npes, troll, nonpracticing, trolls, litigation, npe</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">27</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">firms, partners, cvc, ip, ventures, alliances, nbfs, owners, complementors, misappropriation</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">28</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">firms, board, firm, blockholders, corporate, boards, managerial, antitakeover, shareholder, stockholders</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">29</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">15</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">firms, antitakeover, takeover, provisions, atps, poison, pill, pills, shareholders, takeovers</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">31</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">14</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">entrepreneurs, investors, pitch, personal, competitions, entrepreneur, finance, firms, investor, valuation</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">32</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">14</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">entrepreneurs, cognitive, funding, legitimacy, rational, emotional, pitches, preparedness, aired, sme</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">33</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">15</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">fluoride, enamel, naf, caries, varnishes, mouthrinse, children, preventive, slabs, orthodontic</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">34</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">15</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">enamel, apf, fluoride, rs, coatings, fluorine, appliances, fluoridelike, pld, toothbound</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">36</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">16</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">39</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">luminescence, luminous, etmopterus, photophores, spinax, photogenic, rm, bioluminescence, photophore, luciferin, photocytes</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">37</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">16</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">115</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">electric, fields, sensory, electrosensory, ampullae, ampullary, pores, canals, lorenzini, dipole</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">38</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">16</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">95</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cells, expression, vertebrates, neurons, olfactory, pax, cerebellar, gnathostomes, dlx, dcx</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">39</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">16</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">125</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">olfactory, visual, sensory, vision, nasal, pit, hair, ganglion, hearing, neuromasts</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">40</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">16</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">125</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">brain, olfactory, nuclei, telencephalon, nucleus, pallium, tectum, raphe, thalamus, pretectal</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">41</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">17</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">activation,
+ english, connectionist, memories, perfect, words, homograph, 
+homographs, allenglish, interactiveactivation, qstate, reinstantiation</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">42</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">17</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">speech, standardised, hyperarticulation, ads, bat, fds, sentences, students, ids, vowel</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">43</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">18</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">17</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">coprolites, coprolite, poland, triassic, ichnofacies, phosphatic, cuticle, brittlestar, git, gonioloboceras, wozniki</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">44</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">18</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">244</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">teeth, fossil, miocene, eocene, pliocene, tooth, megalodon, neogene, carcharocles, pisco</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">45</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">18</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">222</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">teeth, sp, jurassic, nov, fossil, cretaceous, triassic, enameloid, neoselachian, hybodont</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">46</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">18</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">179</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">teeth, cretaceous, tooth, nov, campanian, cenomanian, squalicorax, ptychodus, cretoxyrhina, mantelli</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">47</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">18</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">115</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">teeth, sr, delta, isotope, enameloid, fossil, apatite, ree, diagenesis, deltao</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">48</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">19</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">13</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">algorithm, search, web, crawling, sharksearch, pages, pso, nha, crawler, ils</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">49</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">19</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">18</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">optimization, algorithm, smell, fuel, relay, optimizer, chaotic, microgrid, bus, islanding</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">50</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">19</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">13</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">algorithm, reservoir, optimization, operation, algorithms, dam, smla, inflow, irrigation, multiobjective</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">51</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">20</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">injuries, stingrays, injury, jellyfish, wound, envenomations, venom, cnidarian, stings, venomous</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">52</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">20</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">13</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">attacks, bite, patients, injury, injuries, wound, phocae, otters, schematic, sris</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">53</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">20</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">attacks, injuries, attack, victims, carcasses, victim, amphipods, lung, tourniquet, prehospital</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">54</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">20</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">soft, injury, attack, apw, injuries, spb, vibrio, leg, autopsies, vulnificus</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">55</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">20</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">crocodile, attack, program, queensland, removal, attacks, crocodiles, cairns, cairnss, timac</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">56</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">21</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">106</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">fin, swimming, fins, tail, pectoral, caudal, locomotion, kinematics, wake, tendons</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">57</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">21</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">39</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cookiecutter, bite, isistius, whales, bites, brasiliensis, eva, cookie, cutter, wsa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">58</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">21</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">160</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">feeding, prey, jaw, teeth, suction, tooth, bite, force, jaws, hyoid</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">59</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">21</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">68</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cartilage, tesserae, bone, mineralized, mgp, skeleton, pthrp, stiffness, tessellated, tesseral</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">60</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">21</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">208</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">teeth, tooth, chondrichthyan, gnathostomes, devonian, carboniferous, enameloid, braincase, acanthodians, acanthodian</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">61</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">22</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">double,
+ dagger, enamel, apatite, epr, radicals, resonance, phosphorites, vo, 
+cardioliths, catagenetic, chemisorbed, daggerorg, enyl, guano, hoci, 
+hrchci, perinaphta, postdiagenetic, spectroscopies, supergene, uuo, 
+vanadium</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">62</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">23</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">68</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">skin, scales, drag, denticles, fibers, friction, feather, protofeathers, rachis, sinosauropteryx</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">63</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">23</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">67</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">skin, denticles, drag, biomimetic, scales, surfaces, sharkskin, friction, roughness, riblet</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">64</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">23</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">seed, emergence, seedling, soil, germination, arid, seeds, acacia, bunburyana, tetragonophylla</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">65</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">23</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">60</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">surfaces, skin, drag, antifouling, biomimetic, selfcleaning, bionic, lotus, riblets, superhydrophobic</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">66</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">23</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">rimming, rotating, tubes, axial, cylinder, granulated, instability, entrainment, sharkteeth, vc</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">67</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">23</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">99</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">drag, reduction, skin, flow, surfaces, riblet, riblets, bionic, jet, friction</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">68</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">24</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">78</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">genes, gene, immunoglobulin, immune, ig, rag, igm, vh, immunoglobulins, igl</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">69</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">24</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">114</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">genes, class, mhc, immune, tcr, complement, ig, igm, lmp, masp</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">70</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">24</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">140</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">antibodies, antigen, vnar, antibody, ignar, cdr, sdabs, sdab, antigenbinding, vnars</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">71</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">25</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cu, znsod, cdna, superoxide, clone, pk, arg, cuzn, sods, dismutases</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">73</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">26</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">abnormalities,
+ malformations, deformities, dicephalia, foetus, twins, diprosopia, 
+diprosopus, lordosis, synophthalmia, tetrophthalmia, tetrophthalmus</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">74</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">26</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">albinism, specimen, albino, california, ventriosum, sectatrix, leucism, leucistic, revillagigedo, uter</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">75</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">27</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">20</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">strains, vibrio, agar, gastroenteritis, carchariae, ecp, phena, damsela, tsa, ssm</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">76</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">27</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">acids,
+ fatty, polyunsaturated, persian, docosahexaenoic, beveridge, campbell, 
+southwelli, hornell, kotorella, otobothrium, shipley</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">77</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">27</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">112</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">sp, host, hooks, scolex, microtriches, cestode, bothridial, tetraphyllidean, bothridia, pedibothrium</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">78</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">27</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">98</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">host, sp, hosts, copepod, parasite, copepods, parasites, kroyeria, wilson, kroeyerina</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">79</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">27</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">110</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">sp, genus, host, cestodes, scolex, acanthobothrium, caira, jensen, phoreiobothrium, bothridia, paraorygmatobothrium</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">80</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">27</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">20</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">gnathia, reef, gnathiid, cleaning, gnathiids, thirdstage, trimaculata, cleaners, gnathiidae, mediofrontal</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">81</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">27</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">isopod, isopods, leech, macrothela, aegaphales, cirolana, cymothoid, micropredators, micropredatory, raynaudii</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">82</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">28</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">19</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">pardaxin, analogues, peptides, cbps, saponins, sds, surfactants, glycosides, magnifica, pavoninin</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">83</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">28</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">75</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">squalamine, antimicrobial, msi, antibacterial, aminosterol, cannabis, bacteriocin, headache, migraine, trodusquemine</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">84</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">28</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">xo, peptides, digest, ethanolsoluble, antihyperuricemic, tph, alcalase, xanthine, hepes, oxonateinduced</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">85</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">28</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">121</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cartilage, cancer, patients, cam, endothelial, angiogenesis, antiangiogenic, scp, neovastat, vegf</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">86</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">28</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">24</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">turtles, cancer, lesions, fusarium, viral, solani, tumors, avidus, fp, cbs</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">87</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">29</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mbp, myelin, promoter, ser, po, boxes, nucleotides, phosphorylated, box, gollimbp</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">88</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">29</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">myelin, protein, cns, goldfish, plp, mbp, pns, ip, amphibia, mbps</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">89</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">30</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">le, dc, tyrosine, dclok, dpp, drosophila, jnk, bwk, ddok, dok</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">90</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">30</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">draper, engulfment, drosophila, syk, phagocytosis, jedi, megf, ced, drpr, sfk</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">91</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">31</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">24</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">parthenogenesis, facultative, offspring, fp, snakes, parthenogenetic, parthenogens, squamate, iwp, ltss, parthenogenetically</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">92</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">31</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">28</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">genes, bp, mitogenome, proteincoding, codons, trna, trnaser, atg, gtg, cloverleaf</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">93</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">31</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">109</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">genetic, mitochondrial, dna, phylogenetic, genes, cytochrome, mtdna, haplotypes, nucleotide, haplotype</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">94</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">31</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">165</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">dna, identification, specimens, mitochondrial, genetic, barcoding, coi, cytochrome, barcode, fiddler</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">95</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">31</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">167</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">genetic, population, loci, microsatellite, mitochondrial, markers, mtdna, fst, haplotypes, phist</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">96</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">32</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mice, tbcd, pirnas, apsl, diabetes, diabetic, rapsl, cefovecin, hss, silkworm</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">97</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">32</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">111</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">genes, gene, vertebrates, hox, elephant, genome, lamprey, duplication, zebrafish, protocadherin</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">98</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">32</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">95</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">genes, gene, genome, receptors, transcriptome, crh, flaviviruses, ifn, tlr, glp</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">99</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">32</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">55</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">gene, genes, strain, pax, psmb, mch, mhc, fxyd, leptin, bacillus</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">100</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">32</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">36</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">gamma, gh, mcr, melanocortin, pituitary, mrap, gammacrystallins, prl, gammacrystallin, esmcr</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">101</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">32</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">124</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">gene, genes, sequence, sequences, amino, receptor, keratins, cdna, keratin, hoxa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">102</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">33</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">abdomens,
+ chelae, cheliped, dactylar, exorbital, gonopod, hartogi, 
+macrophthalmus, parasesarma, pistrosinus, plictatum, sesarmid, setation,
+ speciescomplex</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">103</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">34</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">22</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">sulfate, cs, chondroitin, oa, knee, pain, glucosamine, shoes, gs, osteoarthritis</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">104</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">34</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">19</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cs, chondroitin, sulfate, cartilage, cse, oa, css, sulfation, adcs, lmwadcs, lmwcsso</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">105</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">34</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">17</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cs, sulfate, ds, chondroitin, dermatan, pet, thrombin, gags, hydrogel, petds</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">106</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">34</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">ks, cartilage, keratan, sulfate, chondroitin, keratanase, oligosaccharides, microbiota, sulphate, aggrecan</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">107</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">34</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">facids,
+ cedfp, ffa, furan, alkyne, auicatalyzed, chromatograms, cmethyl, 
+cmpentylf, cmpf, cyclization, ecarboxyethenyldimethyfuranpentanoic, 
+endodig, esiqtofms, facid, hydroarylation, iodinepromoted, keta, 
+methyllithiummediated, mhion, tetrasubstituted</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">108</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">35</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">gm, gangliosides, iiineuac, iineuacggcer, ivneuac, ganglioside, gsls, ceramide, fucosylgm, hybridtype</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">109</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">36</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">corneal, crosslinking, stroma, corneas, pgs, rf, cxl, rfuva, fib, uva</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">110</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">36</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">sulfate,
+ chondroitin, ds, fibrils, cfumeg, gag, fibrillogenesis, megakaryocytes,
+ chondrosine, nmwide, thrombopoiesis, thrombopoietin</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">111</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">37</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">34</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">beta, linkage, sulfate, chondroitin, gal, galnac, cs, glca, xyl, aggrecan</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">112</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">37</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">linkage, beta, hexasaccharide, decorin, gal, scattering, proteoglycan, carbohydrateprotein, hexa, hexapeptide</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">113</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">37</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">sulfate, beta, chondroitin, galnac, glca, gal, hexasaccharide, tetrasaccharides, deltahexa, idoa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">114</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">38</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">chondroitin, epitope, sulfate, dsd, csd, hd, ivd, mab, octasaccharides, versican, wf</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">115</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">38</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cs, chondroitin, sulfate, disaccharide, csd, outgrowth, pgp, cse, hd, gdg</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">116</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">38</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cs, sulfate, chondroitin, ds, pleiotrophin, oligosaccharides, galnacsst, glca, oversulfated, outgrowthpromoting</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">117</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">39</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">103</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">dolphins, social, females, bottlenose, alliances, calves, tursiops, alliance, sponging, spongers</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">118</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">39</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">21</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">dolphins, dolphin, humpback, bottlenose, sousa, plumbea, tursiops, finless, algoa, glgs</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">119</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">39</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">21</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">whales, killer, dolphins, whale, calves, dusky, humpback, octopuses, mothercalf, escorts</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">120</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">39</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">93</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">predation, risk, prey, predators, seals, dolphins, foraging, tiger, turtles, dolphin</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">121</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">40</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">spawning, ornamental, ovaprim, ovulation, cgnrh, dmso, iia, topical, broodstock, frenatum</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">122</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">41</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">13</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mats, microbial, facies, mat, coquinas, ponds, bioclastic, coquina, reservoirs, rudstones, shields</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">123</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">41</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">77</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">microbial, stromatolites, carbonate, microbialites, mats, stromatolite, lake, microbialite, mat, thrombolites</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">124</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">41</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">87</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">microbial, stromatolites, mats, mat, microbialites, cyanobacteria, microbialite, archaea, halococcus, hamelinensis</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">125</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">42</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">39</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">everglades, slough, soil, marsh, phosphorus, periphyton, taylor, hydroperiod, sawgrass, jamaicense</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">126</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">42</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">river, florida, everglades, cdom, dom, soils, floc, photochemical, dop, emer</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">127</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">42</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">43</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mangrove, soil, river, forest, tidal, everglades, doc, mangroves, germinans, hurricanes</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">128</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">42</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">everglades, ecotone, srs, ts, enso, nino, snook, fmhd, slr, dom</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">129</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">43</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">54</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">dugongs, dugong, seagrass, bay, surveys, aerial, dugon, manatees, clearcuts, rhizomes</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">130</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">43</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">63</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">seagrass, bay, seagrasses, antarctica, posidonia, amphibolis, epiphytes, griffithii, epiphyte, sinuosa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">131</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">43</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">77</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">bay, snapper, spawning, auratus, stock, tidal, hypersaline, pagrus, leeuwin, choerodon</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">132</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">43</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">ornaments, rockshelter, tigershark, archaeological, ethnographic, personal, pulu, sacred, settlement, wear</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">133</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">44</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">harewallabies, cats, reintroduction, feral, bernier, bettongs, rufous, dorre, heirisson, mala, warrens</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">134</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">44</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cats, rabbits, bandicoots, feral, vegetation, reintroduction, bettongs, heirisson, prong, sticknest</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">135</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">45</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">metals, metal, cadmium, sediment, flesh, seston, pirie, barker, micronuclei, schomburgkii</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">136</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">45</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">lag, cadmium, sandstone, coarse, scallops, lags, shallowmarine, transgressive, distributary, panther</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">137</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">46</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">hr,
+ halobium, anion, halorhodopsin, approx, hop, angs, halflifetime, 
+halobacterium, halobacterial, interhelical, salinarium, shuttle</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">138</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">46</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">epilepsy,
+ companies, inhibition, jaws, conference, neuroscience, optogenetic, 
+attendees, biotech, cruxhalorhodopsin, generaluse, haloarcula, 
+lightinduced, photocurrents, pigmentosa, redshifted, retinitis, 
+sensoryevoked, silencers, transcranial</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">139</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">47</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">acoustic, geoacoustic, inversion, sound, broadband, spacefrequency, striation, adjointbased, pile, soundspeed</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">140</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">47</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">acoustic, oxygen, waveguide, posidonia, inversion, ctd, impulse, oceanica, broadband, geoacoustic</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">141</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">47</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">wavenumbers, cs, estimation, wavenumber, pf, propagating, inversion, frequencywavenumber, hla, mbmf</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">142</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">48</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">generics, connections, principled, language, labels, minority, sentences, essentialism, normalcy, quantificational</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">143</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">49</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">130</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">delta, trophic, stable, muscle, isotope, isotopic, thousand, greenland, isotopes, deltan</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">144</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">49</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">199</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">hg, mercury, concentrations, muscle, consumption, seafood, mehg, methylmercury, selenium, thg</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">145</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">49</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">po, concentration, bq, radionuclides, fecal, ra, cs, pu, radionuclide, wwt</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">146</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">49</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">salmonella, drying, seafood, coli, moisture, shrimps, shrinkage, import, pangasius, mdr</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">147</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">49</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">53</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">concentrations, ng, pcbs, pcb, ddts, pbdes, wt, sigma, meobde, bde</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">148</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">50</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">156</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">prey, trophic, diet, feeding, delta, predators, isotope, cephalopods, isotopic, iri</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">149</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">50</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">212</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">prey, diet, trophic, stomach, dietary, iri, crustaceans, items, stomachs, cephalopods</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">150</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">50</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">62</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">ecosystem, trophic, prey, fisheries, diet, fishing, biomass, detritus, ecopath, onykia</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">151</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">51</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">9</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">alien, greece, mediterranean, turkey, ionian, lagocephalus, lessepsian, mollusca, siganus, luridus</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">152</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">51</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">lwr, deepsea, lengthweight, stocking, tactics, lwrs, pangasius, wlr, blennoides, ih</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">153</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">52</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">249</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">females, cm, fisheries, males, fishing, management, fishery, trophic, catch, maturity</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">154</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">52</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">37</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mediterranean, fishing, depth, catch, shelf, melastomus, bold, balearic, gsa, codend</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">155</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">52</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">35</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">females, growth, males, cm, maturity, management, fishery, fishing, bertalanffy, lmpa</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">156</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">52</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">70</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">fishing, fisheries, fishery, skate, mortality, catch, bycatch, maturity, discard, flep</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">157</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">53</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">73</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">nkcc, cotransporter, nakcl, cl, phosphorylation, na, cotransport, bumetanide, cotransporters, basolateral</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">158</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">53</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">23</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cell, volume, cl, factin, actin, cotransport, nkcc, hypertonic, sgc, bkca</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">159</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">53</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">62</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cl, secretion, chloride, rectal, adenosine, cftr, cotransporter, nakcl, cotransport, srg</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">160</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">54</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">80</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cnp, natriuretic, gland, peptide, rectal, receptor, receptors, secretion, anp, endothelin</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">161</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">54</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">110</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">urea, gland, ammonia, tmao, rectal, na, sw, fw, hco, cpsase</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">162</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">54</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">secretion, gastric, cck, receptor, gastrin, esophagus, ccka, cckx, gastroesophageal, cckb</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">163</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">54</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">22</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">aqp, kidney, urea, tubule, renal, cp, nhe, sglt, tr, dglucose</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">164</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">55</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mg, arsenic, pd, ni, modifier, arsenobetaine, interferences, microwave, nist, nrcc</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">165</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">55</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">arsenic, compounds, arsenobetaine, arsenocholine, arsenolipids, chromatid, dimethylated, alkalilabile, arsenosugar, fatsoluble</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">167</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">56</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">7</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mrp, spermatocysts, chromatin, premeiotic, sertoli, meiotic, spermatogenesis, postmeiotic, chara, fertilizing</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">168</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">56</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">betascymnol, bile, scymnol, apap, sulfate, betas, oxoscymnol, apapinduced, alphahsd, alphapentol</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">169</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">57</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">23</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">na, nakatpase, enzyme, atp, cholesterol, phosphorylation, ep, dephosphorylation, rh, phosphoenzyme</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">170</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">57</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">enzyme, cytochrome, subunit, bovine, oxidase, beef, dimeric, iiidepleted, monomerisation, oxidases</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">171</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">57</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">22</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">nakatpase, enzyme, membranes, kidney, pig, inactivation, trypsinized, unfolding, epr, trypsinization</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">172</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">57</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">24</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">nakatpase, fxyd, protein, na, katpase, plm, ouabain, plms, pfxyd, curcumin</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">174</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">58</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">50</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">liver, oil, alkylglycerols, slo, alkylgro, akgs, alkyl, sows, paf, piglets</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">175</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">58</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">27</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">squalene, oil, extraction, supercritical, dioxide, carbon, mixtures, solubility, packed, solubilities</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">176</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">58</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">40</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">squalene, oil, liver, olive, slo, sq, amaranth, lipoid, squalane, srf</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">177</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">58</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">lipase, digestive, lipolytic, oils, digesta, rectum, hindgut, foregut, icelandic, hydrolyse</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">178</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">58</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">54</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">oil, fatty, liver, acids, lipid, squalene, oils, dha, pufa, dage</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">179</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">59</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">10</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">heme, proton, myoglobin, mb, myoglobins, noe, resonances, hyperfine, pgmb, glne, ldmb</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">180</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">60</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">8</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">iodide, thyroid, ng, iodine, goiter, nitrate, thyroids, goiters, goitre, slp</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">181</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">60</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">68</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">blood, capture, mmol, dl, lactate, glucose, corticosterone, istat, wbc, eugenol</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">182</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">60</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">51</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">liver, amino, urea, fabp, hb, ketone, tmao, cps, hemoglobins, lbfabp</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">183</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">60</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">37</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">coronary, ventricular, cardiac, pericardial, myocardium, filling, arteries, venous, atrial, ppc</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">184</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">60</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">44</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">hypoxia, epaulette, anoxia, hypoxic, ocellatum, anoxic, adenosine, pcrit, normoxic, reoxygenation</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">185</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">61</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">6</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">larvae, eel, eels, diets, glass, hy, japonica, leptocephali, ajaponica, defatted</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">186</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">61</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">dha, rotifers, eggs, larvae, larval, artemia, dlalphatoc, rotifer, ve, dalphatoc, dropsy</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">187</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">62</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mood,
+ participants, cardiovascular, iceberg, phobia, spider, 
+extraversionbased, spiders, cbt, everest, introverts, italianlanguage, 
+parsonssmith</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">188</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">62</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">children, nogo, tasks, ef, ocd, sedentary, vocabulary, childrens, gng, nonorganized</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">189</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">63</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">29</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">collagen, gel, alpha, gelatin, collagens, pig, mtgase, fibril, smpc, udon</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">190</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">63</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">20</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">hydrolysate, gelatin, hydrolysates, hydrolysis, antioxidant, dh, pagt, sdwcph, antifreeze, fdwcph</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">191</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">63</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">19</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">urea, myosin, gel, surimi, denaturation, mb, requiem, tmao, setted, rigidity</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">192</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">63</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">45</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">collagen, gelatin, psc, films, asc, collagens, gelatins, sscs, ciip, bbs</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">193</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">11</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">63</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">4</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">oil, capsules, alginate, linseed, pectin, encapsulation, gum, microencapsulation, slo, arabic, maltodextrin, microencapsulated</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">194</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">64</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">136</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">acoustic, movement, individuals, movements, reef, telemetry, receivers, tagged, social, residency</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">195</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">64</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cookei, prickly, echinorhinus, mazatlan, alimentacion, centro, ciad, desarrollo, investigacion, panhemispheric, unidad</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">196</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">64</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">203</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">movement, swimming, lemon, reef, nursery, brevirostris, home, tracked, bimini, bonefish</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">197</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">64</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">171</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">habitat, nursery, juvenile, individuals, coastal, habitats, juveniles, blacktip, acoustic, bsv</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">198</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">65</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">79</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">mm, females, yolk, embryos, uterine, tl, gestation, sac, placenta, appendiculae</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">199</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">65</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">157</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">reproductive, females, sperm, mating, testosterone, spermatogenesis, sertoli, progesterone, relaxin, prm</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">200</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">65</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">25</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">females, reproductive, sperm, mating, follicles, gnrh, duct, spermatozoa, spermatocysts, thyroid</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">201</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">65</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">31</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">reproductive, females, cm, males, embryos, fl, uterine, mating, oophagy, au</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">202</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">65</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">105</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">females, mm, males, reproductive, tl, embryos, maturity, egg, fecundity, ovarian</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">203</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">66</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">288</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">cm, females, fishing, population, catch, males, fishery, fisheries, maturity, catches</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">204</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">66</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">93</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">growth, cm, age, females, males, vertebral, linfinity, bertalanffy, von, pcl</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">205</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">66</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">196</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">growth, age, cm, females, males, vertebral, band, linfinity, von, bertalanffy</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">206</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">67</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">147</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">white, carcharias, movements, carcharodon, movement, prey, seals, tagged, fur, guadalupe</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">207</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">67</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">270</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">whale, typus, individuals, rhincodon, manta, tourism, sightings, zooplankton, photoidentification, ningaloo</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">208</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">67</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">271</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">vertical, depth, movements, tags, movement, swimming, satellite, thresher, archival, rm</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">209</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">12</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">67</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">99</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">basking, prey, cetorhinus, zooplankton, maximus, foraging, sightings, levy, whales, walk</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">210</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">13</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">68</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">5</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">query, hive, memory, impala, sql, oceanrt, gb, dbpedia, hiveql, dhe, jdk, multitable</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">211</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">13</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">69</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">2</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">hive, computing, log, batch, cloud, hadoop, hiveql, qmapper, spark, sql, unified</td>
+    </tr>
+    <tr>
+      <td class="gt_row gt_left gt_stub" style="font-family: Times; font-size: 14px;">212</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">13</td>
+      <td class="gt_row gt_right" style="font-family: Times; font-size: 14px; text-align: left;">69</td>
+      <td class="gt_row gt_center" style="font-family: Times; font-size: 14px; text-align: left;">3</td>
+      <td class="gt_row gt_left" style="font-family: Times; font-size: 14px; text-align: right;">spark, analytics, blocking, query, sql, bdas, lab, relational, declarative, tuples</td>
+    </tr>
+  </tbody>
+  
+  
+</table></div>
+
+
+</body></html>
