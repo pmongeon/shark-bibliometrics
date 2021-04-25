@@ -401,9 +401,11 @@ CCBCNetwork %>%
 
 ```{r message=FALSE, warning=FALSE}
 
+noise <- c(2,7,8,11,12,15,16) #line added by Rémi to filter out noise communities
 indicators <- Articles %>%
   left_join(Altmetrics, by="ut") %>% 
-  filter(!is.na(total))
+  filter(!is.na(total)) %>%
+  filter(!macro_cluster %in% noise) #line added by Rémi to filter out noise communities
 
 impact_dist_macro <- indicators %>% 
   group_by(macro_cluster) %>% 
